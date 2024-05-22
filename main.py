@@ -1,7 +1,12 @@
+def read_book(book):
+    with open(f"books/{book}", "r") as f:
+        return f.read()
+
+
 def main():
-    with open("books/frankenstein.txt", "r") as f:
-        text = f.read()
-        print(text)
+    book = "frankenstein.txt"
+    print(read_book(book))
+
 
 if __name__ == "__main__":
     main()
