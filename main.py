@@ -20,7 +20,7 @@ def count_words(book):
 def sort_counts(letters):
     letters_list = []
     for letter, count in letters.items():
-        if letter in "abcdefghijklmnopqrstuvwxyz":
+        if letter.isalpha():
             letters_list.append({"letter": letter, "count": count})
 
     sort_on_count = lambda dict: dict["count"]
