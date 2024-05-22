@@ -1,0 +1,5 @@
+# virtual environments
+*venv*
+
+# don't include books
+books/
