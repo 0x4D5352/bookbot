@@ -4,9 +4,12 @@ def read_book(book):
 
 
 def count_letters(book):
-    letters = {letter: 0 for letter in "abcdefghijklmnopqrstuvwxyz"}
+    letters = {}
     for character in book.lower():
-        letters[character] += 1
+        if character not in letters.keys():
+            letters[character] = 1
+        else:
+            letters[character] += 1
     return letters
 
 
@@ -18,6 +21,7 @@ def main():
     title = "frankenstein.txt"
     book = read_book(title)
     print(f"{title} contains {count_words(book)} words!")
+    print(count_letters(book))
 
 
 if __name__ == "__main__":
