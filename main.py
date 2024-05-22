@@ -13,9 +13,11 @@ def count_letters(book):
 def count_words(book):
     return len(book.split())
 
+
 def main():
-    book = "frankenstein.txt"
-    print(read_book(book))
+    title = "frankenstein.txt"
+    book = read_book(title)
+    print(f"{title} contains {count_words(book)} words!")
 
 
 if __name__ == "__main__":
