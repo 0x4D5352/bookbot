@@ -20,8 +20,7 @@ def count_words(book):
 def sort_counts(letters):
     letters_list = []
     for letter, count in letters.items():
-        if letter.isalpha():
-            letters_list.append({"letter": letter, "count": count})
+        letters_list.append({"letter": letter, "count": count})
 
     sort_on_count = lambda dict: dict["count"]
 
@@ -35,7 +34,8 @@ def main():
     print(f"--- begin report of {title} ---")
     print(f"{title} contains {count_words(book)} words!\n")
     for letter in sort_counts(count_letters(book)):
-        print(f"the {letter["letter"]} character was found {letter["count"]} times")
+        if letter["letter"].isalpha():
+            print(f"the {letter["letter"]} character was found {letter["count"]} times")
     print("--- End report ---")
 
 
