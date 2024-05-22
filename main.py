@@ -19,10 +19,14 @@ def count_words(book):
 
 def sort_counts(letters):
     letters_list = []
-    for letter in letters:
-        letters_list.append({"letter": letter, "count": letters[letter]})
-    sort_on_count = lambda x: x["count"]
-    return letters_list.sort(reverse=True, key=sort_on_count)
+    for letter, count in letters.items():
+        if letter in "abcdefghijklmnopqrstuvwxyz":
+            letters_list.append({"letter": letter, "count": count})
+
+    sort_on_count = lambda dict: dict["count"]
+
+    letters_list.sort(reverse=True, key=sort_on_count)
+    return letters_list
 
 
 def main():
